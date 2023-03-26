@@ -3,7 +3,8 @@ import streamlit as st
 
 
 st.set_page_config(layout='wide')
-col1, col2 = st.columns(2)
+col1, empty_column , col2 = st.columns([0.7, 0.2, 3])
+
 
 with col1:
     st.image("images/photo.png")
@@ -30,7 +31,7 @@ with col3:
         st.write(row["description"])
         st.image("images/"+row["image"])
         st.write(f"[Source Code]({row['url']})")
-1
+
 with col4:
     for index, row in df[:10].iterrows():
         st.header(row["title"])
