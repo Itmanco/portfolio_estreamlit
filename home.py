@@ -3,7 +3,7 @@ import streamlit as st
 
 
 st.set_page_config(layout='wide')
-col1, empty_column , col2 = st.columns([0.7, 0.2, 3])
+col1, empty_column , col2 = st.columns([1, 0.2, 2])
 
 
 with col1:
@@ -12,12 +12,17 @@ with col1:
 with col2:
     st.title("Jaime Motta")
     content = """
-    Hi, I am Jaime! I am a Python programmer, I graduated from computer science.
+    Hi, I'm Jaime Motta, I'm a computer science engineer. Programming is my passion, I am currently working with python developing web applications.
+I am still discovering all the benefits that python provides as a programming language compared to my past experiences using c#, c++, Java.
+I like the idea of exploring the wide range of applications that can be implemented safely, quickly and easily in this language.
+I will continue experimenting and expanding the variety of applications available in the following list.
     """
     st.write(content)
 
 content2 = """
 Below you can find some of the apps I have built in Python. Feel free to contact me!
+
+Few of the applications were created with the guidance of third parties.
 """
 st.write(content2)
 
