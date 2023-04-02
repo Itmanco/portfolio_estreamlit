@@ -22,16 +22,17 @@ I will continue experimenting and expanding the variety of applications availabl
 content2 = """
 Below you can find some of the apps I have built in Python. Feel free to contact me!
 
-Few of the applications were created with the guidance of third parties.
+some of the following applications were created with the guidance of third parties.
 """
 st.write(content2)
 
-col3, empty_column , col4 = st.columns([1.5, 0.5, 1.5])
+col3, empty_column, col4 = st.columns([1.5, 0.5, 1.5])
 
-df = pandas.read_csv("data.csv", sep=';')
+df = pandas.read_csv("data.csv", sep=";")
 
 with col3:
     for index, row in df[10:].iterrows():
+        print(f"-->{row}")
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/"+row["image"])
