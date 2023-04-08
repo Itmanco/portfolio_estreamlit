@@ -3,7 +3,7 @@ import streamlit as st
 
 
 st.set_page_config(layout='wide')
-col1, empty_column , col2 = st.columns([1, 0.2, 2])
+col1, empty_column , col2 = st.columns([0.5, 0.2, 2])
 
 
 with col1:
@@ -32,16 +32,17 @@ st.write(content2)
 col3, empty_column, col4 = st.columns([1.2, 0.5, 1.2])
 
 df = pandas.read_csv("data.csv", sep=";")
+middlevalue = int(len(df.index)/2)
 
 with col3:
-    for index, row in df[10:].iterrows():
+    for index, row in df[middlevalue:].iterrows():
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/"+row["image"])
         st.write(f"[Source Code]({row['url']})")
 
 with col4:
-    for index, row in df[:10].iterrows():
+    for index, row in df[:middlevalue].iterrows():
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/"+row["image"])
